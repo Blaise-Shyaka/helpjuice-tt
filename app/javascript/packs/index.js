@@ -1,8 +1,4 @@
 jQuery(document).ready(function(){
-  // const options = {
-  //   data: ["Hi", "Hey", "Cool", "Okay"]
-  // };
-  // $('*[data-behavior="autocomplete"]').easyAutocomplete(options);
   $input = $('*[data-behavior="autocomplete"]')
 
   const options = {
