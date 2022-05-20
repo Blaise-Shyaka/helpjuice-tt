@@ -12,7 +12,7 @@ The Project aims at implementing a search functionality and display analytics of
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://helpjuice-tt.herokuapp.com/)
 
 ## Getting Started
 
