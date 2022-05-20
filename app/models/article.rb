@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
 
   validates_presence_of :title, :description, :article_url
   validates_length_of :title, minimum: 5, maximum: 200

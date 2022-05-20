@@ -3,9 +3,9 @@
     <div class="relative flex items-center justify-between h-16">
       <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
         <div class="flex-shrink-0 flex items-center">
-          <%= form_tag articles_path, method: :get do %>
-            <%= text_field_tag 'article', params[:article], placeholder: "Search article" %>
-            <%= submit_tag 'Search!' %>
+          <%= form_for articles_path, method: :get, :html => { :style => 'display:flex;' } do %>
+            <%= text_field_tag :article, params[:article], placeholder: "Search Article", :data => {:behavior => 'autocomplete' } %> 
+            <%= submit_tag 'Search!', { style: 'color: white', :class => "ml-4 text-white bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" } %>
           <% end %>
         </div>
       </div>
