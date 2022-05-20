@@ -1,0 +1,31 @@
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <%= form_tag articles_path, method: :get do %>
+            <%= text_field_tag 'article', params[:article], placeholder: "Search article" %>
+            <%= submit_tag 'Search!' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div>
+          <% if current_user %>
+            <%= link_to "Sign out", destroy_user_session_path, { style: 'color: white', method: :delete, :class => "ml-40 text-white bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" } %>
+          <% else %>
+            <%= link_to "Log In", new_user_session_path, { style: 'color: white', class: "text-white ml-4 font-bold py-2 px-4 rounded"} %>
+            <%= link_to "Sign Up", new_user_registration_path, { style: 'color: white', :class => "ml-4 text-white bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="w-full px-4 py-4 mx-auto max-w-7xl md:w-3/4 lg:w-2/4">
+  <div class="flex flex-col space-y-12 divide-y divide-gray-200">
+    <ul>
+      <%= render @articles %>
+    </ul>
+  </div>
+</section>
